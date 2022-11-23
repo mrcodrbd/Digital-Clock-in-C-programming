@@ -35,7 +35,7 @@ void main()
                     system("cls");
                printf("\nInvalid Time! Try aging.\n") ;
             }
-            count++;
+            count=1;
             printf("Enter HH MM SS \n");
             scanf("%d %d %d",&hh,&mm,&ss);
         }
