@@ -41,11 +41,21 @@ void main()
         }
         while(hh<0 || mm<0 || ss<0);
     }
-    for(; hh>0; hh++)
+    int fullTime;
+    for(; hh>=0; hh++)
     {
-        if(hh>12)
+        fullTime=hh;
+
+        if(hh>12 )
         {
-            hh%=12;
+            if(hh==24)
+                hh=0;
+            else
+                hh%=12;
+        }
+        if(fullTime==24)
+        {
+            fullTime=0;
         }
         for(; mm<60; mm++)
         {
@@ -56,10 +66,10 @@ void main()
                 if(ss==59)
                 {
                     ss=0;
-                    printf("HH: %d MM: %d SS: %d",hh,mm,ss);
+                    printf("HH: %d MM: %d SS: %d %s",hh==0?12:hh,mm,ss,fullTime<12?"AM":"PM");
                     break;
                 }
-                printf("HH: %d MM: %d SS: %d",hh,mm,ss);
+                printf("HH: %d MM: %d SS: %d %s",hh==0?12:hh,mm,ss,fullTime<12?"AM":"PM");
             }
             if(mm==59)
             {
